@@ -1,0 +1,30 @@
+version: "3"
+
+volumes:
+  pg-data:
+    external: false
+
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - pg-data:/usr/local/pgsql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+
+  web:
+    build: .
+    command: bundle exec rails s -p 3000
+    volumes:
+      - .:/seedrs-api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=password
