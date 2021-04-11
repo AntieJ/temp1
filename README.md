@@ -49,13 +49,13 @@ docker-compose run web rspec
 
 ### List Campaigns
 
-- *URL*
+- **URL**
   /api/v1/campaigns
 
-- *METHOD*
+- **METHOD**
   `GET`
 
-- *URL Params*
+- **URL Params**
 
     *Required*: None.
 
@@ -68,11 +68,11 @@ docker-compose run web rspec
     `investments_count[from]=INTEGER`
     `investments_count[to]=INTEGER`
 
-- *Data Params*
+- **Data Params**
 
   None.
 
-- *Success Response*
+- **Success Response**
 
   Code: 200
   Content:
@@ -111,19 +111,19 @@ docker-compose run web rspec
 
 ### Create Investment
 
-- *URL*
+- **URL**
   /api/v1/campaigns/:campaign_id/investments
 
-- *METHOD*
+- **METHOD**
   `POST`
 
-- *URL Params*
+- **URL Params**
 
   *Required*: None.
 
   *Optional*: None.
 
-- *Data Params*
+- **Data Params**
 
     ```
     {
@@ -133,7 +133,7 @@ docker-compose run web rspec
     }
     ```
 
-- *Success Response*
+- **Success Response**
 
   Code: 200
   Content:
@@ -149,7 +149,7 @@ docker-compose run web rspec
   }
   ```
   
-- *Error Response*
+- **Error Response**
 
   Code: 404
   Content:
